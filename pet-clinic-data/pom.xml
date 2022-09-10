@@ -3,18 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>spring.petclinic</groupId>
+        <artifactId>sfg-pet-clinic</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>spring.petclinic</groupId>
+
     <artifactId>pet-clinic-data</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>pet-clinic-data</name>
-    <description>pet-clinic-data</description>
+
     <properties>
-        <java.version>11</java.version>
+        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
     </properties>
 
     <dependencies>
@@ -43,4 +40,20 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
