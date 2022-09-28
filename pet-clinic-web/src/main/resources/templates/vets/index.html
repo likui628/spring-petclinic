@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" th:replace="~{fragments/layout :: layout (~{::body},'vets')}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>List of Vets</title>
+    <title>Pet Clinic Index</title>
 </head>
 <!--/*@thymesVar id="vet" type="spring.petclinic.model.Vet"*/-->
 <!--/*@thymesVar id="vets" type="java.util.Set<spring.petclinic.model.Vet>"*/-->
-<h1 th:text="'Index Page'">Index Page</h1>
+<body>
+<h2 th:text="'List of Vets'">List of Vets...</h2>
+
 <table>
     <thead>
     <tr>
@@ -23,5 +25,6 @@
     </tr>
     </tbody>
 </table>
+
 </body>
 </html>

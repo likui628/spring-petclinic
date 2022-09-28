@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" th:replace="~{fragments/layout :: layout (~{::body},'owners')}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>List of Owners</title>
 </head>
-<body>
 <!--/*@thymesVar id="owner" type="spring.petclinic.model.Owner"*/-->
 <!--/*@thymesVar id="owners" type="java.util.Set<spring.petclinic.model.Owner>"*/-->
-<h1 th:text="'List of Owners'">List of Owners...</h1>
+<body>
+<h2 th:text="'List of Owners'">List of Owners...</h2>
+
 <table>
     <thead>
-        <tr>
-            <td>ID</td>
-            <td>First Name</td>
-            <td>Last Name</td>
-        </tr>
+    <tr>
+        <td>ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+    </tr>
     </thead>
     <tbody>
-        <tr th:each="owner:${owners}">
-            <td th:text="${owner.id}"></td>
-            <td th:text="${owner.firstName}"></td>
-            <td th:text="${owner.lastName}"></td>
-        </tr>
+    <tr th:each="owner:${owners}">
+        <td th:text="${owner.id}"></td>
+        <td th:text="${owner.firstName}"></td>
+        <td th:text="${owner.lastName}"></td>
+    </tr>
     </tbody>
 </table>
+
 </body>
 </html>
